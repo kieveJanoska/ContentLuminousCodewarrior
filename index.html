@@ -18,6 +18,29 @@
 
   <p> <a href="page8.html"> Activate S7 </a> | <a href="page9.html"> Activate S8 </a> |
   <a href="page10.html"> Activate S9 </a> </p>
+
+
+  <button id="screamButton">Activate Scream</button>
+
+  <script>
+    document.getElementById('screamButton').addEventListener('click', function() {
+      fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: 'Scream activated!' })
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    });
+  </script>
+  
   <script src="script.js"></script>
 </body>
 
