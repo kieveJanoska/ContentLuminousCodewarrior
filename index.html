@@ -2,46 +2,69 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>replit</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  <h2> Screamer System </h2>
-  <p> <a href="page2.html"> Activate S1 </a> | <a href="page3.html"> Activate S2 </a> |
-  <a href="page4.html"> Activate S3 </a> </p>
-  
-  <p> <a href="page5.html"> Activate S4 </a> | <a href="page6.html"> Activate S5 </a> |
-  <a href="page7.html"> Activate S6 </a> </p>
+	<center>
+		<h2> Screamer System </h2>
+		<button id="screamButtonA">
+			<h2> Activate Scream Sequence
+		</button>
+		<script>
+			document.getElementById('screamButtonA').addEventListener('click', function () {
+				fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=A', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({message: 'Scream activated!'})
+				})
+					.then(response => response.json())
+					.then(data => {
+						console.log('Success:', data);
+					})
+					.catch((error) => {
+						console.error('Error:', error);
+					});
 
-  <p> <a href="page8.html"> Activate S7 </a> | <a href="page9.html"> Activate S8 </a> |
-  <a href="page10.html"> Activate S9 </a> </p>
 
+				fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=B', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({message: 'Scream activated!'})
+				})
+					.then(response => response.json())
+					.then(data => {
+						console.log('Success:', data);
+					})
+					.catch((error) => {
+						console.error('Error:', error);
+					});
 
-  <button id="screamButton">Activate Scream</button>
+				fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=C', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({message: 'Scream activated!'})
+				})
+					.then(response => response.json())
+					.then(data => {
+						console.log('Success:', data);
+					})
+					.catch((error) => {
+						console.error('Error:', error);
+					});
+			});
+		</script>
 
-  <script>
-    document.getElementById('screamButton').addEventListener('click', function() {
-      fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ message: 'Scream activated!' })
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-    });
-  </script>
-  
-  <script src="script.js"></script>
+		<script src="script.js"></script>
 </body>
 
 </html>
