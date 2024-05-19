@@ -22,7 +22,8 @@
 						'Content-Type': 'application/json'
 					},
 					body: JSON.stringify({message: 'Scream activated!'})
-				})
+					})
+					
 					.then(response => response.json())
 					.then(data => {
 						console.log('Success:', data);
@@ -30,7 +31,8 @@
 					.catch((error) => {
 						console.error('Error:', error);
 					});
-
+				
+				
 
 				fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=B', {
 					method: 'POST',
@@ -38,7 +40,8 @@
 						'Content-Type': 'application/json'
 					},
 					body: JSON.stringify({message: 'Scream activated!'})
-				})
+					})
+					
 					.then(response => response.json())
 					.then(data => {
 						console.log('Success:', data);
@@ -53,7 +56,8 @@
 						'Content-Type': 'application/json'
 					},
 					body: JSON.stringify({message: 'Scream activated!'})
-				})
+					})
+					
 					.then(response => response.json())
 					.then(data => {
 						console.log('Success:', data);
