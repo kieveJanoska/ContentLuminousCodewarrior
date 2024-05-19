@@ -34,7 +34,7 @@
 				
 				
 
-				fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=B', {
+				setTimeout(fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=B', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
@@ -48,9 +48,9 @@
 					})
 					.catch((error) => {
 						console.error('Error:', error);
-					});
+					}), 3000)
 
-				fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=C', {
+				setTimeout(fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=C', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
@@ -64,7 +64,7 @@
 					})
 					.catch((error) => {
 						console.error('Error:', error);
-					});
+					}), 7000)
 			});
 		</script>
 
