@@ -16,7 +16,7 @@
 		</button>
 		<script>
 			document.getElementById('screamButtonA').addEventListener('click', function () {
-				setTimeout(fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=A', {
+				fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=A', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
@@ -34,7 +34,7 @@
 				
 				
 
-				setTimeout(fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=B', {
+				setTimeout(() => {fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=B', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
@@ -48,9 +48,9 @@
 					})
 					.catch((error) => {
 						console.error('Error:', error);
-					}), 4000)
+					})}, 4000)
 
-				setTimeout(fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=C', {
+				setTimeout(() => {fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=C', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
@@ -64,7 +64,7 @@
 					})
 					.catch((error) => {
 						console.error('Error:', error);
-					}), 0)
+					})}, 7000)
 			});
 		</script>
 
