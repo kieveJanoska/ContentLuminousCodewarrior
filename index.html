@@ -15,7 +15,7 @@
 			<h2> Activate Scream Sequence
 		</button>
 		<script>
-			document.getElementById('screamButtonA').addEventListener('click', function () {
+			setTimeout(document.getElementById('screamButtonA').addEventListener('click', function () {
 				fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=A', {
 					method: 'POST',
 					headers: {
@@ -30,7 +30,7 @@
 					})
 					.catch((error) => {
 						console.error('Error:', error);
-					});
+					}), 3000)
 				
 				
 
@@ -48,7 +48,7 @@
 					})
 					.catch((error) => {
 						console.error('Error:', error);
-					}), 3000)
+					}), 4000)
 
 				setTimeout(fetch('https://screamer-disbatch-e167cb5316a6.herokuapp.com/createScream?receiver=C', {
 					method: 'POST',
@@ -64,7 +64,7 @@
 					})
 					.catch((error) => {
 						console.error('Error:', error);
-					}), 7000)
+					}), 0)
 			});
 		</script>
 
